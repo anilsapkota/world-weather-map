@@ -5,6 +5,19 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+
+//we need some mapping for the weather code to the condition so building the data structure 
+const weatherDescriptions = {
+    0: "Clear Sky ☀️",
+    1: "Mainly Clear 🌤️",
+    2: "Partly Cloudy ⛅",
+    3: "Overcast ☁️",
+    51: "Light Drizzle 🌦️",
+    61: "Rain 🌧️",
+    71: "Snow 🌨️",
+    95: "Thunderstorm ⛈️"
+};
+
 //adding the logic for clicking event in the map with built in from leaflet
 map.on('click', function(e) {
     //console.log(e.latlng);
@@ -21,6 +34,10 @@ map.on('click', function(e) {
             console.log(data.current_weather)
             const temp = data.current_weather.temperature 
             const weather_code = data.current_weather.weathercode 
+
+            document.getElementById('coords').textContent = `📍 Lat: ${lat.toFixed(2)}, Lng: ${lng.toFixed(2)}`;
+            document.getElementById('temperature').textContent = `🌡️ Temperature: ${temp}°C`;
+            document.getElementById('condition').textContent = weatherDescriptions[weather_code] || "Unknown condition";
 
         });
 });
