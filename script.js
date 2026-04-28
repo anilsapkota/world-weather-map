@@ -1,4 +1,5 @@
 const map = L.map('map').setView([20, 0], 2);
+let currentView = 'temperature';
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -56,4 +57,3 @@ map.on('click', function(e) {
         });
 });
 
-let currentView = 'temperature';
