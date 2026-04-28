@@ -34,9 +34,9 @@ map.on('click', function(e) {
             console.log(data.current_weather)
             const temp = data.current_weather.temperature 
             const weather_code = data.current_weather.weathercode 
-
-            document.getElementById('coords').textContent = `📍 Lat: ${lat.toFixed(2)}, Lng: ${lng.toFixed(2)}`;
-            document.getElementById('temperature').textContent = `🌡️ Temperature: ${temp}°C`;
+            //we are using the mapping to get the weather condition from the 
+            document.getElementById('coords').textContent = ` Lat: ${lat.toFixed(2)}, Lng: ${lng.toFixed(2)}`;
+            document.getElementById('temperature').textContent = `Temperature: ${temp}°C`;
             document.getElementById('condition').textContent = `Condition: ${weatherDescriptions[weather_code] || "Unknown condition"}`;
 
         });
