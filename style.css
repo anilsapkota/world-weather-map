@@ -9,7 +9,14 @@ body {
     height: 100vh;
 }
 
-#panel{
-    width: 30%;
-
+#panel {
+    position: absolute;   /* takes it out of normal flow */
+    top: 20px;            /* 20px from the top */
+    right: 20px;          /* 20px from the right */
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;        /* makes sure it sits ON TOP of the map */
 }
