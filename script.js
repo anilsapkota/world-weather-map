@@ -19,6 +19,8 @@ map.on('click', function(e) {
         .then(response =>response.json())
         .then(data =>{
             console.log(data.current_weather)
+            const temp = data.current_weather.temperature 
+            const weather_code = data.current_weather.weathercode 
 
         });
 });
