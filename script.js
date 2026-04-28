@@ -5,7 +5,21 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+//setting the current view to be temperature by default
 
+
+
+function setView(view) {
+    currentView = view;
+    //Update the display based on the current view
+    if(currentView === 'temperature'){
+        document.getElementById('temperature').style.display = 'block';
+        document.getElementById('condition').style.display = 'none';
+    } else if (currentView === 'condition') {
+        document.getElementById('temperature').style.display = 'none';
+        document.getElementById('condition').style.display = 'block';
+    }
+}
 //we need some mapping for the weather code to the condition so building the data structure 
 const weatherDescriptions = {
     0: "Clear Sky ☀️",
@@ -41,3 +55,5 @@ map.on('click', function(e) {
 
         });
 });
+
+let currentView = 'temperature';
