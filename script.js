@@ -37,7 +37,7 @@ map.on('click', function(e) {
 
             document.getElementById('coords').textContent = `📍 Lat: ${lat.toFixed(2)}, Lng: ${lng.toFixed(2)}`;
             document.getElementById('temperature').textContent = `🌡️ Temperature: ${temp}°C`;
-            document.getElementById('condition').textContent = weatherDescriptions[weather_code] || "Unknown condition";
+            document.getElementById('condition').textContent = `Condition: ${weatherDescriptions[weather_code] || "Unknown condition"}`;
 
         });
 });
