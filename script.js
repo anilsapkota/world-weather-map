@@ -54,6 +54,8 @@ map.on('click', function(e) {
             document.getElementById('temperature').textContent = `Temperature: ${temp}°C`;
             document.getElementById('condition').textContent = `Condition: ${weatherDescriptions[weather_code] || "Unknown condition"}`;
 
+        }).catch(error => {
+        document.getElementById('coords').textContent = ` Could not get weather data`;
+        console.error('Fetch error:', error);
         });
-});
-
+    });
